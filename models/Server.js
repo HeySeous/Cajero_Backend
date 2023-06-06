@@ -7,7 +7,9 @@ class Server {
         this.port = 3000;
 
         this.paths = {
-            productos: '/api/productos'
+            productos: '/api/productos',
+            usuarios: '/api/usuarios',
+            movimientosCaja: '/api/movimientosCaja'
            
         };
 
@@ -24,6 +26,8 @@ class Server {
 
     routes(){
         this.app.use( this.paths.productos, require('../routes/productos'));
+        this.app.use( this.paths.usuarios, require('../routes/usuarios'));
+        this.app.use( this.paths.movimientosCaja, require('../routes/movimientosCaja'));
        
         
     }
