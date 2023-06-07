@@ -9,8 +9,10 @@ class Server {
         this.paths = {
             productos: '/api/productos',
             usuarios: '/api/usuarios',
-            movimientosCaja: '/api/movimientosCaja'
-           
+            movimientosCaja: '/api/movimientosCaja',
+            caja: 'api/caja',
+            tickets: 'api/tickets',
+            ventas: 'api/ventas'           
         };
 
         this.middlewares();
@@ -28,6 +30,9 @@ class Server {
         this.app.use( this.paths.productos, require('../routes/productos'));
         this.app.use( this.paths.usuarios, require('../routes/usuarios'));
         this.app.use( this.paths.movimientosCaja, require('../routes/movimientosCaja'));
+        this.app.use( this.paths.caja, require('../routes/caja'));
+        this.app.use( this.paths.tickets, require('../routes/tickets'));
+        this.app.use( this.paths.ventas, require('../routes/ventas'));
        
         
     }
